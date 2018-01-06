@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
+    message.delete();
     var fortunes = [
         "Yes",
         "No",
@@ -18,7 +19,8 @@ exports.run = (client, message, args) => {
         message.channel.sendEmbed(new Discord.RichEmbed()
            .setColor(0x11B8D6)
            .setTimestamp()
-           .addField(`${message.author.username}#${message.author.discriminator}: ${args.join(" ")}`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`));
+           .addField(`${message.author.username}#${message.author.discriminator}`, `${args.join(" ")}`)
+           .addField(`Turtles`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`));
     } else {
         message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
