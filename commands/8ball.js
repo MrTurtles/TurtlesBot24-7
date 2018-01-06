@@ -20,9 +20,9 @@ exports.run = (client, message, args) => {
            .setColor(0x11B8D6)
            .setTimestamp()
            .setAuthor(message.author.username, message.author.avatarURL)
-           .addField(`$Questioned`, `${args.join(" ")}`)
-           .addField(`Turtles`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
-           .setFooter("© 8Ball", client.user.avatarURL));
+           .addField(`Questioned`, `${args.join(" ")}`)
+           .addField(`${client.user.avatarURL} Turtles his respond`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
+           .setFooter("© 8Ball"));
     } else {
         message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
