@@ -1,9 +1,10 @@
 {
-  "name": "Tutorial-Bot",
-  "version": "1.1.5",
-  "description": "An Idiot's Guide tutorial Bot",
+  "name": "turtles-discord-bot",
+  "version": "1.0.0",
+  "description": "turtles bot",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "An Idiot's Guide",
@@ -14,5 +15,18 @@
     "moment": "^2.17.1",
     "ms": "^0.7.2",
     "return-deep-diff": "^0.2.7"
-  }
+  },
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrTurtles/turtles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrTurtles/turtles/issues"
+  },
+  "homepage": "https://github.com/MrTurtles/turtles#readme"
 }
