@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const settings = require('../settings.json');
+//const settings = require('../settings.json');
 exports.run = async (client, message, args) => {
     message.delete();
     if(message.author.id !== settings.ownerid) return;

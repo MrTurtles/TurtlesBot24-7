@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const settings = require('./settings.json');
+//const settings = require('./settings.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
@@ -52,16 +52,17 @@ client.reload = command => {
 client.elevation = message => {
   /* This function should resolve to an ELEVATION level which
      is then sent to the command handler for verification*/
+  let ownerid = "275303108589125633";
   let permlvl = 1;
-  let help_role = message.guild.roles.find('name', settings.helprolename);
+  let help_role = message.guild.roles.find('name', "Helper");
   if (help_role && message.member.roles.has(help_role.id)) permlvl = 2;
-  let mod_role = message.guild.roles.find('name', settings.modrolename);
+  let mod_role = message.guild.roles.find('name', "Moderator");
   if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 3;
-  let admin_role = message.guild.roles.find('name', settings.adminrolename);
+  let admin_role = message.guild.roles.find('name', "Admin");
   if (admin_role && message.member.roles.has(admin_role.id)) permlvl = 4;
-  let owner_role = message.guild.roles.find('name', settings.ownerrolename);
+  let owner_role = message.guild.roles.find('name', "Owner");
   if (owner_role && message.member.roles.has(owner_role.id)) permlvl = 5;
-  if (message.author.id === settings.ownerid) permlvl = 6;
+  if (message.author.id === ownerid) permlvl = 6;
   return permlvl; 
 };
 
@@ -72,11 +73,12 @@ var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
 // });
 
 client.on('warn', e => {
-  console.log(chalk.yellow(e.replace(regToken, 'that was redacted')));
+  console.log(chalk.yellow('Some warn!'));
 });
 
 client.on('error', e => {
-  console.log(chalk.red(e.replace(regToken, 'that was redacted')));
+  console.log(chalk.red('Some error!'));
 });
 
-client.login(settings.token);
+client.login(process.env.BOT_TOKEN);
+//client.login(settings.token);
