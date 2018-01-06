@@ -19,13 +19,15 @@ exports.run = (client, message, args) => {
         message.channel.sendEmbed(new Discord.RichEmbed()
            .setColor(0x11B8D6)
            .setTimestamp()
-           .addField(`${message.author.username}#${message.author.discriminator}`, `${args.join(" ")}`)
-           .addField(`Turtles`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`));
+           .setAuthor(message.author.username, message.author.avatarURL)
+           .addField(`$Questioned`, `${args.join(" ")}`)
+           .addField(`Turtles`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
+           .setFooter("© 8Ball", client.user.avatarURL));
     } else {
         message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
-            .addField(`Error ❌`, `Sorry, I do not understand that.`));
+            .addField(`Error ❌`, `Sorry, I do not understand that.`)).then(m => m.delete(5000)).catch(console.error);
     }
 };
 
