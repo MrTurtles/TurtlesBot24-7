@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
            .setTimestamp()
            .setAuthor(message.author.username, message.author.avatarURL)
            .addField(`Questioned`, `${args.join(" ")}`)
-           .addField(`🐢 Turtles his respond`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
+           .addField(`🐢 Answer`, `${fortunes[Math.floor(Math.random() * fortunes.length)]}`)
            .setFooter("© 8Ball"));
     } else {
         message.channel.sendEmbed(new Discord.RichEmbed()
