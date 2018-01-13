@@ -9,7 +9,7 @@ exports.run = (client, message, params) => {
     message.author.sendEmbed(
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
-      .addField('= Command List = ', `Use ${prefix}help <commandname> for details\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} - ${c.help.rank}`).join('\n')}`)).then(m => m.delete(10000)).catch(console.error);
+      .addField('= Command List = ', `Use ${prefix}help <commandname> for details\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} - ${c.help.rank}`).join('\n')}`)).catch(console.error);
   } else {
     let command = params[0];
     if (client.commands.has(command)) {
