@@ -9,11 +9,7 @@ exports.run = async (client, message, args) => {
       const evaled = client.clean(await eval(code));
       if(message.flags.includes("d")) message.delete();
       if(message.flags.includes("s")) return;
-      message.channel.send(/*Embed(new Discord.RichEmbed()
-            .setColor(0x00E90B0B)
-            .setTimestamp()
-            .addField(`Input 📥`, `${code}`)
-            .addField(`Output 📤`,*/ `\`\`\`xl\n${evaled}\n\`\`\``);//);
+      message.channel.send(`\`\`\`xl\n${evaled}\n\`\`\``);
     }
     catch(err) {
       if(message.flags[0] && message.flags[0] === 's')
