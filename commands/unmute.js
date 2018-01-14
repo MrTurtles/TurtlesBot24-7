@@ -2,13 +2,12 @@ const Discord = require('discord.js');
 //const settings = require('../settings.json');
 exports.run = (client, message, args) => {
   let prefix = ",";
-  message.delete();
   let time = args.slice(1).join(' ').split('?');
   let reason = args.slice(2).join(' ');
   let user = message.mentions.users.first();
   let modlog = message.guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  //if (!modlog) return message.reply('I cannot find a log channel named: logs').then(m => m.delete(5000)).catch(console.error);
+  //if (!modlog) return message.reply('I cannot find a log channel named: logs').catch(console.error);
   if (!muteRole) return;
   if (message.mentions.users.size < 1) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
@@ -31,7 +30,7 @@ exports.run = (client, message, args) => {
     message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Succesfully unmuted ${user}!`)).then(m => m.delete(5000));
+            .addField(`Succes ✅`, `Succesfully unmuted ${user}!`));
     if (!modlog) return message.channel.sendEmbed(embed);
     client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);    
   } else {
