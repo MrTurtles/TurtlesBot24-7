@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 exports.run = (client, message) => {
   message.delete();
   /*message.channel.sendMessage('Ping?')
