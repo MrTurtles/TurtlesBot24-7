@@ -10,8 +10,8 @@ exports.run = (client, message, args) => {
   
   let prefix = ",";
   message.delete();
-  let time = args.slice(1).join(' ');
-  let reason = args.slice(3).join(' ');
+  let time = args[1];
+  let reason = args[2];
   let user = message.mentions.users.first();
   let modlog = message.guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -81,6 +81,6 @@ exports.conf = {
 exports.help = {
   name: 'muteb',
   rank: 'Owner',
-  description: '(OWNER)- Experimental mute command!',
+  description: '(OWNER)- Experimental mute!',
   usage: 'muteb [user] [duration] [reason]'
 };
