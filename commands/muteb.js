@@ -79,8 +79,8 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'mute',
-  rank: 'Moderator',
-  description: '(MOD)- Mutes a mentioned user with specific time',
-  usage: 'mute [user] [duration] [reason]'
+  name: 'muteb',
+  rank: 'Owner',
+  description: '(OWNER)- Experimental mute!',
+  usage: 'muteb [user] [duration] [reason]'
 };
