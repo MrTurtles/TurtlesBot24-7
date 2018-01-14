@@ -35,7 +35,7 @@ exports.run = (client, message, args) => {
     if (!modlog) return message.channel.sendEmbed(embed);
     client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);    
   } else {
-      message.message.channel.sendEmbed(new Discord.RichEmbed()
+      message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `That user is not muted.\nTo mute him/her use: ${prefix}mute [user] [duration] [reason]`)).then(m => m.delete(5000));
