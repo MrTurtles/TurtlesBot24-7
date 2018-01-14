@@ -75,12 +75,12 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: [],
-  permLevel: 6
+  permLevel: 3
 };
 
 exports.help = {
-  name: 'muteb',
-  rank: 'Owner',
-  description: '(OWNER)- Experimental mute!',
-  usage: 'muteb [user] [duration] [reason]'
+  name: 'mute',
+  rank: 'Moderator',
+  description: '(MOD) - Mute a user with specific duration and reason!',
+  usage: 'mute [user] [duration] [reason]'
 };
