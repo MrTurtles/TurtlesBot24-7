@@ -8,7 +8,7 @@ exports.run = (client, message) => {
   message.channel.sendEmbed(
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
-      .addField(`PONG!`, `${client.ping}ms`));
+      .addField(`PONG!`, `${client.ping}ms`)).then(m => m.delete(10000));
 };
 
 exports.conf = {
