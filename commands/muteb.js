@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `Sorry, I can't mute ghosts. :wink:`)).then(m => m.delete(5000)).catch(console.error);
-  if (time.length < 1) return message.channel.sendEmbed(new Discord.RichEmbed()
+  if (!time) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `You must set a duration!`)).then(m => m.delete(5000));
