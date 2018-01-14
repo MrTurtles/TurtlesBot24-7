@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 //const settings = require('../settings.json');
 exports.run = async (client, message, args) => {
     message.delete();
-    let ownerID = 275303108589125633;
-    /*if(message.author.id !== ownerID) return;
+    /*if(message.author.id != 275303108589125633) return;
     const code = args.join(" ");
     try {
       const evaled = client.clean(await eval(code));
@@ -15,7 +14,7 @@ exports.run = async (client, message, args) => {
         return message.delete();
       message.channel.send(`\`ERROR\` \`\`\`xl\n${client.clean(err)}\n\`\`\``);
     }*/
-    if(message.author.id !== ownerID) return message.channel.sendEmbed(new Discord.RichEmbed()
+    if(message.author.id != 275303108589125633) return message.channel.sendEmbed(new Discord.RichEmbed()
           .setColor(0x00EB1A1A)
           .setTimestamp()
           .addField(`:no_entry: No Permission`, `${message.author}, You have no permission for this command!`)).then(m => m.delete(5000));
