@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   let prefix = ",";
   message.delete();
   let time = args[1];
-  let reason = args.slice(3).join(' ');
+  let reason = args.slice(2).join(' ');
   let user = message.mentions.users.first();
   let modlog = message.guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -42,7 +42,7 @@ exports.run = (client, message, args) => {
     .addField('Action', 'Mute')
     .addField('User', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Duration', `${time} Minutes`)
+    .addField('Duration', `${time} Seconds`)
     .addField('Reason:', reason)
 
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.channel.sendEmbed(new Discord.RichEmbed()
@@ -60,12 +60,12 @@ exports.run = (client, message, args) => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Succesfully muted ${user} for ${time} minutes.\nReason: ${reason}`)).then(m => m.delete(5000));
+            .addField(`Succes ✅`, `Succesfully muted ${user} for ${time} Seconds.\nReason: ${reason}`)).then(m => m.delete(5000));
       if (!modlog) return message.channel.sendEmbed(embed);
       client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
       setTimeout(function() {
         message.guild.member(user).removeRole(muteRole);
-      }, time*60000); 
+      }, time*1000); 
     }); 
   } 
 
