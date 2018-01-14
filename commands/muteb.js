@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
     .setTimestamp()
     .addField('⚠ Todo ⚠', `Make sure to configure the Muted role in **ALL** the text channels!\nEdit Channel > Permissions > Add the Muted role > Send Message permission to :x:\nDone this on **every** text channel? Good now you're done.\nRemind to set this permission in every new channel you make in the future!`));
   }
-  if (reason.length < 1) reason = "No reason specified.";
+  if (!reason) reason = "No reason specified.";
   if (message.mentions.users.size < 1) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
