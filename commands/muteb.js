@@ -81,6 +81,6 @@ exports.conf = {
 exports.help = {
   name: 'muteb',
   rank: 'Owner',
-  description: '(OWNER)- Experimental mute!',
+  description: '(OWNER)- Experimental mute command!',
   usage: 'muteb [user] [duration] [reason]'
 };
