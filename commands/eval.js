@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 //const settings = require('../settings.json');
 exports.run = async (client, message, args) => {
     message.delete();
-    if(message.author.id !== settings.ownerid) return;
+    let ownerid = 275303108589125633;
+    if(message.author.id !== ownerid) return;
     const code = args.join(" ");
     try {
       const evaled = client.clean(await eval(code));
