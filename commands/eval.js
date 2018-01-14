@@ -15,7 +15,10 @@ exports.run = async (client, message, args) => {
         return message.delete();
       message.channel.send(`\`ERROR\` \`\`\`xl\n${client.clean(err)}\n\`\`\``);
     }*/
-    if(message.author.id !== ownerID) return;
+    if(message.author.id !== ownerID) return message.channel.sendEmbed(new Discord.RichEmbed()
+          .setColor(0x00EB1A1A)
+          .setTimestamp()
+          .addField(`:no_entry: No Permission`, `${message.author}, You have no permission for this command!`)).then(m => m.delete(5000));
     try {
       const code = args.join(" ");
       let evaled = eval(code);
