@@ -64,7 +64,7 @@ exports.run = (client, message, args) => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Succesfully muted ${user.username}#${user.discriminator} for ${time} minutes.`)).then(m => m.delete(5000));
+            .addField(`Succes ✅`, `Succesfully muted ${user} for ${time} minutes.`)).then(m => m.delete(5000));
       if (!modlog) return message.channel.sendEmbed(embed);
       client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
       setTimeout(function() {
