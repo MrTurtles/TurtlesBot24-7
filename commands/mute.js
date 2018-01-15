@@ -38,7 +38,10 @@ exports.run = (client, message, args) => {
     .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
     .addField('Duration', `${time} Seconds`)
     .addField('Reason:', reason)
-
+  if (!time) return message.channel.sendEmbed(new Discord.RichEmbed()
+            .setColor(0x00E90B0B)
+            .setTimestamp()
+            .addField(`Error ❌`, `You must set a duration!`)).then(m => m.delete(5000));
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
@@ -49,16 +52,20 @@ exports.run = (client, message, args) => {
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `This user is already muted.\nTo unmute this user use: ${prefix}unmute [user]`)).then(m => m.delete(5000));
-  } else if (!time) { 
+  } /*else if (!time && !reason) { 
+    message.channel.sendEmbed(new Discord.RichEmbed()
+            .setColor(0x0013CF0E)
+            .setTimestamp()
+            .addField(`Warning ⚠`, `Something went wrong! Forgot time?`));
     message.guild.member(user).addRole(muteRole).then(() => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Succesfully muted ${user} for **Forever**.\n**Reason:** ${reason}`));
+            .addField(`Succes ✅`, `Succesfully muted ${user} for **Forever** Seconds.\n**Reason:** ${reason}`));
       if (!modlog) return message.channel.sendEmbed(embed);
       client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
-    });
-  } else {
+    });*/
+  /*}*/ else {
     message.guild.member(user).addRole(muteRole).then(() => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
