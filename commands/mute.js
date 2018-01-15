@@ -54,7 +54,7 @@ exports.run = (client, message, args) => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Succesfully muted ${user} for **Forever** Seconds.\n**Reason:** ${reason}`));
+            .addField(`Succes ✅`, `Succesfully muted ${user} for **Forever**.\n**Reason:** ${reason}`));
       if (!modlog) return message.channel.sendEmbed(embed);
       client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
     });
