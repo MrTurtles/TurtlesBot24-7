@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   */
   let prefix = ",";
   let time = args[1];
-  let reason = args.slice(2).join(' ');
+  let reason = args[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
   let user = message.mentions.users.first();
   let modlog = message.guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -79,6 +79,6 @@ exports.conf = {
 exports.help = {
   name: 'mute',
   rank: 'Moderator',
-  description: '(MOD) - Mute a user with specific duration and reason!',
+  description: '(MOD) - Mute a user with specific duration and reason (within 20 words)!',
   usage: 'mute [user] [duration] [reason]'
 };
