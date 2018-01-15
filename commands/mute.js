@@ -30,10 +30,6 @@ exports.run = (client, message, args) => {
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `Sorry, I can't mute ghosts. :wink:`)).then(m => m.delete(5000)).catch(console.error);
-  if (!time) return message.channel.sendEmbed(new Discord.RichEmbed()
-            .setColor(0x00E90B0B)
-            .setTimestamp()
-            .addField(`Error ❌`, `You must set a duration!`)).then(m => m.delete(5000));
   const embed = new Discord.RichEmbed()
     .setColor(0x11B8D6)
     .setTimestamp()
@@ -53,6 +49,15 @@ exports.run = (client, message, args) => {
             .setColor(0x00E90B0B)
             .setTimestamp()
             .addField(`Error ❌`, `This user is already muted.\nTo unmute this user use: ${prefix}unmute [user]`)).then(m => m.delete(5000));
+  } else if (!time) { 
+    message.guild.member(user).addRole(muteRole).then(() => {
+      message.channel.sendEmbed(new Discord.RichEmbed()
+            .setColor(0x0013CF0E)
+            .setTimestamp()
+            .addField(`Succes ✅`, `Succesfully muted ${user} for ${time} Seconds.\n**Reason:** ${reason}`));
+      if (!modlog) return message.channel.sendEmbed(embed);
+      client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+    });
   } else {
     message.guild.member(user).addRole(muteRole).then(() => {
       message.channel.sendEmbed(new Discord.RichEmbed()
