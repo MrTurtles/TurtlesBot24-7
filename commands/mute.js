@@ -36,7 +36,7 @@ exports.run = (client, message, args) => {
     .addField('Action', 'Mute')
     .addField('User', `${user} (${user.id})`)
     .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Duration', `${time} Seconds`)
+    .addField('Duration', `${time} Seconds`) 
     .addField('Reason:', reason)
   if (!time) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
