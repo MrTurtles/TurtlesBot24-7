@@ -31,7 +31,12 @@ module.exports = message => {
     .setColor(0x00EB1A1A)
     .setTimestamp()
     .addField(`Error :no_entry:`, `Commands do not work in Direct Messages!`)
+  const embed6234 = new Discord.RichEmbed()
+    .setColor(0x00EB1A1A)
+    .setTimestamp()
+    .addField(`Error :no_entry:`, `This command is from another bot and cannot be used without the bot in the server.`)
   if (message.content.startsWith(`gn`)) return message.react('🙋' && `😘`);
+  if (message.content.startsWith(`;paycode`)) return message.delete() && message.channel.sendEmbed(embed6234);
   if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return message.channel.sendEmbed(embed66);
