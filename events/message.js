@@ -34,7 +34,7 @@ module.exports = message => {
   const embed6234 = new Discord.RichEmbed()
     .setColor(0x00EB1A1A)
     .setTimestamp()
-    .addField(`Error :no_entry:`, `This command is from another bot and cannot be used without the bot in the server.`)
+    .addField(`Error :no_entry:`, `${message.author}, This command is from another bot and cannot be used without the bot in the server.`)
   if (message.content.startsWith(`gn`)) return message.react('🙋' && `😘`);
   if (message.content.startsWith(`;paycode`)) return message.delete() && message.channel.sendEmbed(embed6234).then(m => m.delete(8000));
   if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
