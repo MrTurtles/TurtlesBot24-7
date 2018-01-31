@@ -36,7 +36,7 @@ module.exports = message => {
     .setTimestamp()
     .addField(`Error :no_entry:`, `This command is from another bot and cannot be used without the bot in the server.`)
   if (message.content.startsWith(`gn`)) return message.react('🙋' && `😘`);
-  if (message.content.startsWith(`;paycode`)) return message.delete() && message.channel.sendEmbed(embed6234);
+  if (message.content.startsWith(`;paycode`)) return message.delete() && message.channel.sendEmbed(embed6234).then(m => m.delete(5000));
   if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return message.channel.sendEmbed(embed66);
