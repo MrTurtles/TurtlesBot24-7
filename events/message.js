@@ -33,7 +33,7 @@ module.exports = message => {
     .addField(`Error :no_entry:`, `Commands do not work in Direct Messages!`)
   const embed6234 = new Discord.RichEmbed()
     .setColor(0x00EB1A1A)
-    .setTimestamp()
+    .setTimestamp() 
     .addField(`Error :no_entry:`, `${message.author}, This command is from another bot and cannot be used without the bot in the server.`)
   if (message.content.startsWith(`gn`)) return message.react('🙋' && `😘`);
   if (message.content.startsWith(`;paycode`)) {
