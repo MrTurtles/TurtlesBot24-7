@@ -39,7 +39,7 @@ module.exports = message => {
   if (message.content.startsWith(`;paycode`)) {
     message.delete(); 
     message.channel.sendEmbed(embed6234).then(m => m.delete(8000));
-    console.log(message);
+    console.log(message.content);
     return;
   };
   if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
