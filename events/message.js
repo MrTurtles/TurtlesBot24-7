@@ -50,8 +50,8 @@ module.exports = message => {
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return message.channel.sendEmbed(embed66);
   if (message.channel.type == 'group') return message.channel.sendEmbed(embed66);
-  if (message.author.id == "368400509087907843" || "368400509087907843") return {
-    message.delete();
+  if (message.author.id === '368400509087907843') return {
+    message.delete()
     message.channel.sendEmbed(embed5729).then(m => m.delete(5000));
   }
   let command = message.content.split(' ')[0].slice(prefix.length);
