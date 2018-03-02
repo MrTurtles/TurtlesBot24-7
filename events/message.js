@@ -36,7 +36,7 @@ module.exports = message => {
     .setColor(0x00EB1A1A)
     .setTimestamp() 
     .addField(`Error :no_entry:`, `${message.author}, This command is from another bot and cannot be used without the bot in the server.`)
-  const embed6234 = new Discord.RichEmbed()
+  const embed5729 = new Discord.RichEmbed()
     .setColor(0x00EB1A1A)
     .setTimestamp() 
     .addField(`Banned! :no_entry:`, `${message.author}, You're banned from using this bot.`)
