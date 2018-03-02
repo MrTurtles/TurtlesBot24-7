@@ -5,6 +5,7 @@ module.exports = message => {
   let client = message.client;
   let prefix = ",";
   if (message.author.bot) return;
+  let blacklist = ["368400509087907843","329262085445779456"]
 
   //if (sales.login = `,help | Off Sale!`) {
   //  let sales2 = `Off!`;
@@ -35,6 +36,10 @@ module.exports = message => {
     .setColor(0x00EB1A1A)
     .setTimestamp() 
     .addField(`Error :no_entry:`, `${message.author}, This command is from another bot and cannot be used without the bot in the server.`)
+  const embed6234 = new Discord.RichEmbed()
+    .setColor(0x00EB1A1A)
+    .setTimestamp() 
+    .addField(`Banned! :no_entry:`, `${message.author}, You're banned from using this bot.`)
   if (message.content.startsWith(`gn`)) return message.react('🙋' && `😘`);
   if (message.content.startsWith(`;paycode`)) {
     message.delete(); 
@@ -46,6 +51,7 @@ module.exports = message => {
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return message.channel.sendEmbed(embed66);
   if (message.channel.type == 'group') return message.channel.sendEmbed(embed66);
+  if (message.author.id === blacklist) return message.channel.sendEmbed(embed5729).then(m => m.delete(5000));
   let command = message.content.split(' ')[0].slice(prefix.length);
   let params = message.content.split(' ').slice(1);
   let perms = client.elevation(message);
