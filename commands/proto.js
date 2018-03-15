@@ -7,6 +7,7 @@ exports.run = (client, message) => {
       .setDescription("Info about updates and stuff.")
       .setThumbnail("https://i.imgur.com/lw8NlD2.png")
       .addBlankField(true)
+      .addBlankField(true)
       .addField(`Updated?`, `NO`, true)
       .addField(`Issues?`, `-`, true));
 };
