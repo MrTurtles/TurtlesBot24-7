@@ -3,8 +3,8 @@ exports.run = (client, message) => {
   message.channel.sendEmbed(
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
-      .setAuthor("Protosmasher Information", "")
-      .addBlankField(true)
+      .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
+      .setDescription("Info about updates and stuff.")
       .addField(`Updated?`, `NO`, true)
       .addField(`Issues?`, `-`, true));
 };
