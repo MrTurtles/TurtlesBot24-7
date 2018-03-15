@@ -4,8 +4,8 @@ exports.run = (client, message) => {
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
       .setAuthor("Protosmasher Information", "")
-      .addField(`Updated?`, `NO`)
-      .addField(`Issues?`, `-`));
+      .addField(`Updated?`, `NO`, true)
+      .addField(`Issues?`, `-`, true));
 };
 
 exports.conf = {
