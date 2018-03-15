@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 exports.run = (client, message) => {
-  message.delete();
   message.channel.sendEmbed(
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
+      .setAuthor("Protosmasher Information", "")
       .addField(`Updated?`, `NO`)
-      .addField(`Issues?`, `-`)).then(m => m.delete(10000));
+      .addField(`Issues?`, `-`));
 };
 
 exports.conf = {
