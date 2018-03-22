@@ -22,8 +22,8 @@ exports.run = (client, message) => {
        .setThumbnail("https://i.imgur.com/lw8NlD2.png")
        .addBlankField(true)
        .addBlankField(true)
-       .addField(`Updated?`, `NO`, true)
-       .addField(`Issues?`, `-`, true));
+       .addField(`Updated?`, `YES`, true)
+       .addField(`Issues?`, `NO`, true));
     }
 };
 
