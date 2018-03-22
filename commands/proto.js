@@ -4,7 +4,7 @@ exports.run = (client, message) => {
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
     if (!muteRole) return message.channe;
     if (message.channel.id == "295877326762278912") {
-        if (message.author.id == "275303108589125633") continue owner;
+        if (message.author.id == "275303108589125633") return;
         message.guild.member(user).addRole(muteRole).then(() => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
@@ -15,7 +15,6 @@ exports.run = (client, message) => {
        }, 30*60000); 
       }); 
     } else {
-        owner:
         message.channel.sendEmbed(
        new Discord.RichEmbed()
        .setColor(0x11B8D6)
