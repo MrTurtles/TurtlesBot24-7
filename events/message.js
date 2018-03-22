@@ -47,7 +47,8 @@ module.exports = message => {
     return;
   };
   if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
-  if (message.content.includes(`veil` || `Veil`)) return message.delete();
+  if (message.content.includes(`veil`)) return message.delete();
+  if (message.content.includes(`Veil`)) return message.delete();
   if (!message.content.startsWith(prefix)) return;
   if (message.channel.type == 'dm') return message.channel.sendEmbed(embed66);
   if (message.channel.type == 'group') return message.channel.sendEmbed(embed66);
