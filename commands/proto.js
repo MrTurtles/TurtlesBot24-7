@@ -25,7 +25,7 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `UPDATED!`, true)
        .addField(`:warning: Issues with?`, `Execution + Injection`, true)
-       .addField(`:arrows_counterclockwise: Website Status:`, `DOWN`, true));
+       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));
     }
 };
 
