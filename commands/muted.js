@@ -5,7 +5,7 @@ exports.run = (client, message) => {
   if(!muteRole) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
-            .addField('Error ❌', 'No-one has been muted with this bot!')
+            .addField('Error ❌', 'No-one has been muted with this bot!'));
   const ListEmbed = new Discord.RichEmbed()
             .setTitle('Muted users:')
             .setColor(0x11B8D6)
