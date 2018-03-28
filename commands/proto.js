@@ -23,8 +23,8 @@ exports.run = (client, message) => {
        .setThumbnail("https://i.imgur.com/lw8NlD2.png")
        .addBlankField(true)
        .addBlankField(true)
-       .addField(`:arrows_counterclockwise: Update Status:`, `UPDATED!`, true)
-       .addField(`:warning: Issues with?`, `Execution + Injection`, true)
+       .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
+       .addField(`:warning: Issues with?`, `-`, true)
        .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));
     }
 };
