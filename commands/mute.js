@@ -13,17 +13,25 @@ exports.run = (client, message, args) => {
   let user = message.mentions.users.first();
   let modlog = message.guild.channels.find('name', 'logs');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  if (!muteRole) {
-    message.reply('I cannot find a mute role named: Muted\n (Making one...)').then(m => m.delete(5000)).catch(console.error);
-    message.guild.createRole({
-      name: 'Muted',
-      color: 'GRAY',
-      permissions: "READ_MESSAGE_HISTORY",
-    })
-    return message.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor(0xFFBB20)
-    .setTimestamp()
-    .addField('⚠ Todo ⚠', `Make sure to configure the Muted role in **ALL** the text channels!\nEdit Channel > Permissions > Add the Muted role > Send Message permission to :x:\nDone this on **every** text channel? Good now you're done.\nRemind to set this permission in every new channel you make in the future!`));
+  if(!muteRole){
+    message.channel.sendEmbed(new Discord.RichEmbed()
+      .setColor(0x00EEFF3E)
+      .addField(`Setting up...`, `This command has never been used, setting it up.\nTry in 5 seconds`)).then(m => m.delete(15000));
+    try{
+      muterole = await message.guild.createRole({
+        name: "Muted",
+        color: "#000000",
+        permissions:[]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
+    }
   }
   if (!reason) reason = "No reason specified.";
   if (message.mentions.users.size < 1) return message.channel.sendEmbed(new Discord.RichEmbed()
