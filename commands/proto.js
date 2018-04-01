@@ -30,7 +30,7 @@ exports.run = (client, message) => {
         http.get({host: site}, function(res){
        if(res.statusCode == 200) {
           //msg.channel.send(`${site}: ONLINE`);
-         msg.channel.sendEmbed(new Discord.RichEmbed()
+         message.channel.sendEmbed(new Discord.RichEmbed()
        .setColor(0x11B8D6)
        .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
        .setDescription("Info about updates and stuff.")
@@ -41,7 +41,7 @@ exports.run = (client, message) => {
        .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true)).then(m => m.delete(10000));
       } else {
           //msg.channel.send(`${site}: OFFLINE`);
-         msg.channel.sendEmbed(new Discord.RichEmbed()
+         message.channel.sendEmbed(new Discord.RichEmbed()
        .setColor(0x11B8D6)
        .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
        .setDescription("Info about updates and stuff.")
