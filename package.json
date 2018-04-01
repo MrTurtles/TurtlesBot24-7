@@ -14,7 +14,8 @@
     "discord.js": "^11.2.1",
     "moment": "^2.17.1",
     "ms": "^0.7.2",
-    "return-deep-diff": "^0.2.7"
+    "return-deep-diff": "^0.2.7".
+    "http": "^0.0.0"
   },
   "engines": {
     "node": "latest",
