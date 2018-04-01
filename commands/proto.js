@@ -15,7 +15,7 @@ exports.run = (client, message) => {
        }, 30*60000); 
       }); 
     } else {
-        message.channel.sendEmbed(
+        /*message.channel.sendEmbed(
        new Discord.RichEmbed()
        .setColor(0x11B8D6)
        .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
@@ -25,7 +25,32 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
        .addField(`:warning: Issues with?`, `-`, true)
-       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));
+       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));*/
+        let site = "protosmasher.net";
+        http.get({host: site}, function(res){
+       if(res.statusCode == 200) {
+          //msg.channel.send(`${site}: ONLINE`);
+         msg.channel.sendEmbed(new Discord.RichEmbed()
+       .setColor(0x11B8D6)
+       .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
+       .setDescription("Info about updates and stuff.")
+       .setThumbnail("https://i.imgur.com/lw8NlD2.png")
+       .addBlankField(true)
+       .addBlankField(true)
+       .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
+       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true)).then(m => m.delete(10000));
+      } else {
+          //msg.channel.send(`${site}: OFFLINE`);
+         msg.channel.sendEmbed(new Discord.RichEmbed()
+       .setColor(0x11B8D6)
+       .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
+       .setDescription("Info about updates and stuff.")
+       .setThumbnail("https://i.imgur.com/lw8NlD2.png")
+       .addBlankField(true)
+       .addBlankField(true)
+       .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
+       .addField(`:arrows_counterclockwise: Website Status:`, `OFFLINE`, true)).then(m => m.delete(10000));
+   }});
     }
 };
 
