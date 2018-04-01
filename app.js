@@ -1,3 +1,19 @@
+var npm = require('npm');
+npm.load(function(err) {
+  // handle errors
+
+  // install modules down below
+  npm.commands.install(['http'], function(er, data) {
+    // log errors or data
+  });
+
+  npm.on('log', function(message) {
+    // log installation progress
+    console.log(message);
+  });
+});
+
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 //const settings = require('./settings.json');
