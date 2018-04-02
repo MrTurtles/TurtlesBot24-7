@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const http = require('http');
 exports.run = (client, message) => {
     let user = message.author;
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -15,7 +16,7 @@ exports.run = (client, message) => {
        }, 30*60000); 
       }); 
     } else {
-        message.channel.sendEmbed(
+        /*message.channel.sendEmbed(
        new Discord.RichEmbed()
        .setColor(0x11B8D6)
        .setAuthor("Protosmasher Information", "https://i.imgur.com/lw8NlD2.png")
@@ -25,8 +26,8 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
        .addField(`:warning: Issues with?`, `-`, true)
-       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));
-       /*let site = "protosmasher.net";
+       .addField(`:arrows_counterclockwise: Website Status:`, `ONLINE`, true));*/
+       let site = "protosmasher.net";
        let check;
        http.get({host: site}, function(res){
        if(res.statusCode == 200) {
@@ -45,7 +46,7 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
        .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true)).then(m => m.delete(7000));
-       });*/
+       });
     }
 };
 
