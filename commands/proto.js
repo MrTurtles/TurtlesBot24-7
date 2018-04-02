@@ -45,7 +45,7 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
-       .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true)).then(m => m.delete(7000));
+       .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true));
        });
     }
 };
