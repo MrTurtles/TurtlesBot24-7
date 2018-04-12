@@ -44,7 +44,7 @@ exports.run = (client, message) => {
        .setThumbnail("https://i.imgur.com/lw8NlD2.png")
        .addBlankField(true)
        .addBlankField(true)
-       .addField(`:arrows_counterclockwise: Update Status:`, `UPDATED!`, true)
+       .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
        .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true));
        });
     }
