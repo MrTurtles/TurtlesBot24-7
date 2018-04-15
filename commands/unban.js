@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
   message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Unbanned <@${user}>!`)).then(m => m.delete(5000)).catch(console.error);
+            .addField(`Success ✅`, `Unbanned <@${user}>!`)).then(m => m.delete(5000)).catch(console.error);
 };
 
 exports.conf = {
