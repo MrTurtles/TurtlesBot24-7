@@ -10,7 +10,7 @@ exports.run = (client, message) => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Auto-Mute ✅`, `Succesfully muted **${user}** for **30** Minutes.\n**Reason:** Use fking #bot-commands`));
+            .addField(`Auto-Mute ✅`, `Successfully muted **${user}** for **30** Minutes.\n**Reason:** Use fking #bot-commands`));
        setTimeout(function() {
         message.guild.member(user).removeRole(muteRole);
        }, 30*60000); 
