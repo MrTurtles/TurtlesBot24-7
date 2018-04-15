@@ -17,5 +17,5 @@ exports.help = {
   name: 'setstatus',
   rank: 'Owner',
   description: '(OWNER) - Sets the status of the bot to streaming.',
-  usage: 'status'
+  usage: 'setstatus [message]'
 };
