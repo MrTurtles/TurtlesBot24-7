@@ -40,7 +40,7 @@ exports.run = (client, message, args) => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Succes ✅`, `Given the role ${role2} to ${user}`)).then(m => m.delete(5000)).catch(console.error);
+            .addField(`Success ✅`, `Given the role ${role2} to ${user}`)).then(m => m.delete(5000)).catch(console.error);
       if (!modlog) return message.channel.sendEmbed(embed);
       client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
     }); 
