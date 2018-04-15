@@ -22,7 +22,7 @@ exports.run = function(client, message, args) {
   }).then(messages => message.channel.bulkDelete(messages));
   const embed15 = new Discord.RichEmbed()
       .setColor(0x0013CF0E)
-      .addField(`Succes :white_check_mark:`, `Succesfully deleted ${messagecount} messages!`);
+      .addField(`Success :white_check_mark:`, `Successfully deleted ${messagecount} messages!`);
   message.channel.sendEmbed(embed15).then(m => m.delete(5000));
 };
 
