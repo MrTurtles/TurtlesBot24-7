@@ -5,7 +5,7 @@ exports.run = (client, message) => {
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
     if (!muteRole) return message.channe;
     if (message.channel.id == "434412524067094539") {
-        if (message.author.id == "275303108589125633") return message.delete();
+        if (message.author.id == "437170742962946050") return message.delete();
         message.guild.member(user).addRole(muteRole).then(() => {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
@@ -45,7 +45,8 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
-       .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true));
+       .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true)
+       .addField(`:warning: NOTE`, `DISCORD SERVER GOT DELETED AGAIN.`, true));
        });
     }
 };
