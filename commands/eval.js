@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 //const settings = require('../settings.json');
 exports.run = async (client, message, args) => {
     message.delete();
-    if(message.author.id != 275303108589125633) return message.channel.sendEmbed(new Discord.RichEmbed()
+    if(message.author.id != 437170742962946050) return message.channel.sendEmbed(new Discord.RichEmbed()
           .setColor(0x00EB1A1A)
           .setTimestamp()
           .addField(`:no_entry: No Permission`, `${message.author}, You have no permission for this command!`)).then(m => m.delete(5000)).catch(console.error);
