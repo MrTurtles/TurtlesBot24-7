@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
             .setTimestamp()
             .addField(`Success ✅`, `Successfully unmuted ${user}!`));
     if (!modlog) return message.channel.sendEmbed(embed);
-    client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);    
+    //client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);    
   } else {
       message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
