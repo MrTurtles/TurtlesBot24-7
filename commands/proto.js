@@ -46,7 +46,7 @@ exports.run = (client, message) => {
        .addBlankField(true)
        .addField(`:arrows_counterclockwise: Update Status:`, `NOT UPDATED!`, true)
        .addField(`:arrows_counterclockwise: Website Status:`, `${check}`, true)
-       .addField(`:warning: NEW SERVER`, `http://discord.gg/xyBNujq`, true));
+       .addField(`:warning: NEW SERVER`, `http://discord.gg/YhynQsY`, true));
        });
     }
 };
