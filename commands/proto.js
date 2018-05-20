@@ -3,7 +3,7 @@ const http = require('http');
 exports.run = (client, message) => {
     let user = message.author;
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-    if (!muteRole) return message.channe;
+    if (!muteRole) return;
     if (message.channel.id == "434412524067094539") {
         if (message.author.id == "437170742962946050") return message.delete();
         message.guild.member(user).addRole(muteRole).then(() => {
