@@ -5,7 +5,7 @@ module.exports = message => {
   let client = message.client;
   let prefix = ",";
   let staff = client.guilds.get(message.guild.id).roles.find('name', 'Staff');
-  if(!staff) return;
+  if(!staff) return; 
   if (message.author.bot) return;
 
   //if (sales.login = `,help | Off Sale!`) {
