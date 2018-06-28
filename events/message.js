@@ -5,6 +5,7 @@ module.exports = message => {
   let client = message.client;
   let prefix = ",";
   let staff = client.guilds.get(message.guild.id).roles.find('name', 'Staff');
+  let user = message.author;
   if(!staff) return; 
   if (message.author.bot) return;
 
@@ -50,7 +51,7 @@ module.exports = message => {
   };
   if (message.content.startsWith(`<@442649270164652032>`)) return message.react('🎉');
   if (message.content.includes(`discord.gg`)) {
-    if (message.author.user.roles.has(staff.id))
+    if (message.guild.member(user).roles.has(staff.id)) return;
     return message.delete();
   }
   if (message.content.includes(`veil`)) return message.delete();
