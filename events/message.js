@@ -4,6 +4,8 @@ const Discord = require('discord.js')
 module.exports = message => {
   let client = message.client;
   let prefix = ",";
+  let staff = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
+  if(!staff) return;
   if (message.author.bot) return;
 
   //if (sales.login = `,help | Off Sale!`) {
@@ -47,7 +49,10 @@ module.exports = message => {
     return;
   };
   if (message.content.startsWith(`<@442649270164652032>`)) return message.react('🎉');
-  if (message.content.includes(`discord.gg`)) return message.delete();
+  if (message.content.includes(`discord.gg`)) {
+    if (message.author.member(user).roles.has(staff.id))
+    return message.delete();
+  }
   if (message.content.includes(`veil`)) return message.delete();
   if (message.content.includes(`Veil`)) return message.delete();
   if (!message.content.startsWith(prefix)) return;
