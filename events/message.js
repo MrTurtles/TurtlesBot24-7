@@ -46,7 +46,7 @@ module.exports = message => {
     console.log(message.author.username + ": " + message.content);
     return;
   };
-  if (message.content.startsWith(`<@304258486466904064>`)) return message.react('🎉');
+  if (message.content.startsWith(`<@442649270164652032>`)) return message.react('🎉');
   if (message.content.includes(`veil`)) return message.delete();
   if (message.content.includes(`Veil`)) return message.delete();
   if (!message.content.startsWith(prefix)) return;
