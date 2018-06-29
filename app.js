@@ -52,7 +52,8 @@ client.reload = command => {
 client.elevation = message => {
   /* This function should resolve to an ELEVATION level which
      is then sent to the command handler for verification*/
-  let ownerid = "165471100807938048" || "437170742962946050";
+  let ownerid = "165471100807938048";
+  let ownerid2 = "437170742962946050";
   let permlvl = 1;
   let help_role = message.guild.roles.find('name', "Helper");
   if (help_role && message.member.roles.has(help_role.id)) permlvl = 2;
@@ -63,6 +64,7 @@ client.elevation = message => {
   let owner_role = message.guild.roles.find('name', "Owner");
   if (owner_role && message.member.roles.has(owner_role.id)) permlvl = 5;
   if (message.author.id === ownerid) permlvl = 6;
+  if (message.author.id === ownerid2) permlvl = 6;
   return permlvl; 
 };
 
