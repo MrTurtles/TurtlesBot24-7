@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   message.delete();
   let say = args.join(" ")
+  if (!say) return;
   message.channel.sendMessage(say);
   
 };
