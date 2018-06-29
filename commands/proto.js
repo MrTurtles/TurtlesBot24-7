@@ -15,6 +15,17 @@ exports.run = (client, message) => {
         message.guild.member(user).removeRole(muteRole);
        }, 30*60000); 
       }); 
+    } else if (message.channel.id == "442642986308993027") {
+        if (message.author.id == "437170742962946050") return message.delete();
+        message.guild.member(user).addRole(muteRole).then(() => {
+      message.channel.sendEmbed(new Discord.RichEmbed()
+            .setColor(0x0013CF0E)
+            .setTimestamp()
+            .addField(`Auto-Mute ✅`, `Successfully muted **${user}** for **30** Minutes.\n**Reason:** Use fking #bot-commands`));
+       setTimeout(function() {
+        message.guild.member(user).removeRole(muteRole);
+       }, 30*60000); 
+      }); 
     } else {
         /*message.channel.sendEmbed(
        new Discord.RichEmbed()
