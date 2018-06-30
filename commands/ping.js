@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 exports.run = (client, message) => {
   message.delete();
   let modlog = message.guild.channels.find('name', 'logs');
+  console.log(message.guild);
   const embed = new Discord.RichEmbed()
     .setColor(0x11B8D6)
     .setTimestamp()
@@ -10,7 +11,10 @@ exports.run = (client, message) => {
     .then(msg => {
       msg.edit(`Pong! (took: ${msg.createdTimestamp - message.createdTimestamp}ms)`).then(m => m.delete(10000));
     });*/
-  client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+  message.guild.channels.get(modlog.id).sendEmbed(new Discord.RichEmbed()
+    .setColor(0x11B8D6)
+    .setTimestamp()
+    .addField('Action', 'Test')).catch(console.error);
   message.channel.sendEmbed(
       new Discord.RichEmbed()
       .setColor(0x11B8D6)
