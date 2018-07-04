@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
     .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason);
   if (!modlog) return message.channel.sendEmbed(embed);
-  return client.channels.get(modlog.id).sendEmbed(embed);
+  return;// client.channels.get(modlog.id).sendEmbed(embed);
 };
 
 exports.conf = {
