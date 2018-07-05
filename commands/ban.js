@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
   message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x0013CF0E)
             .setTimestamp()
-            .addField(`Success ✅`, `Banned ${user}!`)).then(m => m.delete(5000)).catch(console.error);
+            .addField(`Success ✅`, `Banned ${user}!`)).catch(console.error);
 
   const embed = new Discord.RichEmbed()
     .setColor(0x11B8D6)
