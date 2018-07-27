@@ -49,7 +49,7 @@ module.exports = message => {
     console.log(message.author.username + ": " + message.content);
     return;
   };
-  if (message.content.startsWith(`<@442649270164652032>`)) return message.react('🎉');
+  if (message.content.startsWith(`<@470361339609743360>`)) return message.react('🎉');
   if (message.content.includes(`discord.gg`)) {
     if (message.guild.member(user).roles.has(staff.id)) return;
     return message.delete();
