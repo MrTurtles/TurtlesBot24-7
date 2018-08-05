@@ -5,7 +5,7 @@ exports.run = (client, message) => {
   const embed2 = new Discord.RichEmbed()
     .setColor(0x11B8D6)
     .setTimestamp()
-    .addField(`Creator`, `Dave|MrTurtles#4907 - <@275303108589125633>`)
+    .addField(`Creator`, `DaveK#5477 - <@165471100807938048>`)
     .addField(`Info`, `This bot is for fun and moderation.`)
     .addField(`Guilds`, `${client.guilds.array().length}`)
     .setThumbnail(client.user.avatarURL)
