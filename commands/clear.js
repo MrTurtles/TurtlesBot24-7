@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
+  let modlog = message.guild.channels.find('name', 'logs');
   const embed16 = new Discord.RichEmbed()
       .setColor(0x00E90B0B)
       .addField(`Error :no_entry:`, `You're missing a number of messages to delete!`);
