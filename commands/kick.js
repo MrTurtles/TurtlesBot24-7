@@ -28,8 +28,8 @@ exports.run = (client, message, args) => {
     .addField('User', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason);
-  if (!modlog) return message.channel.sendEmbed(embed);
-  return;// client.channels.get(modlog.id).sendEmbed(embed);
+  if (!modlog) return message.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
+  message.guild.channels.get(modlog.id).sendEmbed(embed);
 };
 
 exports.conf = {
