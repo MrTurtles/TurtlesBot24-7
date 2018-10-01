@@ -4,7 +4,7 @@ exports.run = (client, message) => {
   message.delete();
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
   let users = message.guild.roles.get(muteRole.id).members.map(m=>m.user.tag).join('\n\n')
-  if users = "" users = "None";
+  if(users = "") users = "None";
   if(!muteRole) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
