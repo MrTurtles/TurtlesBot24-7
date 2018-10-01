@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   client.unbanReason = reason;
   client.unbanAuth = message.author;
   let user = args[0];
-  //let modlog = message.guild.channels.find('name', 'logs');
+  let modlog = message.guild.channels.find('name', 'logs');
   //if (!modlog) return message.reply('I cannot find a log channel named: logs').then(m => m.delete(5000));
   if (reason.length < 1) reason = "No reason specified.";
   if (!user) return message.channel.sendEmbed(new Discord.RichEmbed()
@@ -17,6 +17,15 @@ exports.run = (client, message, args) => {
             .setColor(0x0013CF0E)
             .setTimestamp()
             .addField(`Success ✅`, `Unbanned <@${user}>!`)).then(m => m.delete(5000)).catch(console.error);
+  const embed = new Discord.RichEmbed()
+            .setColor(0x00AE86)
+            .setTimestamp()
+            .addField('Action', 'Ban')
+            .addField('User', `${user.username}#${user.discriminator}`)
+            .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
+            .addField('Reason', reason)
+  if (!modlog) return message.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
+  message.guild.channels.get(modlog.id).sendEmbed(embed);
 };
 
 exports.conf = {
