@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 exports.run = (client, message) => {
   message.delete();
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
+  if(muteRole) = "" then muteRole = "None";
   if(!muteRole) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
