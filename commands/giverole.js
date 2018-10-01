@@ -41,8 +41,8 @@ exports.run = (client, message, args) => {
             .setColor(0x0013CF0E)
             .setTimestamp()
             .addField(`Success ✅`, `Given the role ${role2} to ${user}`)).then(m => m.delete(5000)).catch(console.error);
-      if (!modlog) return message.channel.sendEmbed(embed);
-      client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+      if (!modlog) return message.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
+      message.guild.channels.get(modlog.id).sendEmbed(embed);
     }); 
   }
 };
