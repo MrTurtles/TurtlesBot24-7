@@ -50,10 +50,10 @@ module.exports = message => {
     return;
   };
   if (message.content.startsWith(`<@470361339609743360>`)) return message.react('🎉');
-  if (message.content.includes(`discord.gg`)) {
+  /*if (message.content.includes(`discord.gg`)) {
     if (message.guild.member(user).roles.has(staff.id)) return;
     return message.delete();
-  }
+  }*/
   if (message.content.includes(`veil`)) return message.delete();
   if (message.content.includes(`Veil`)) return message.delete();
   if (!message.content.startsWith(prefix)) return;
