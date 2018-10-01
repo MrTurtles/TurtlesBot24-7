@@ -3,7 +3,8 @@ const Discord = require('discord.js');
 exports.run = (client, message) => {
   message.delete();
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  if muteRole = "" muteRole = "None";
+  let users = message.guild.roles.get(muteRole.id).members.map(m=>m.user.tag).join('\n\n')
+  if users = "" users = "None";
   if(!muteRole) return message.channel.sendEmbed(new Discord.RichEmbed()
             .setColor(0x00E90B0B)
             .setTimestamp()
@@ -11,7 +12,7 @@ exports.run = (client, message) => {
   const ListEmbed = new Discord.RichEmbed()
             .setTitle('Muted users:')
             .setColor(0x11B8D6)
-            .setDescription(message.guild.roles.get(muteRole.id).members.map(m=>m.user.tag).join('\n\n'));
+            .setDescription(users);
   message.channel.send(ListEmbed).then(m => m.delete(15000));  
 };
 
