@@ -24,6 +24,15 @@ exports.run = function(client, message, args) {
       .setColor(0x0013CF0E)
       .addField(`Success :white_check_mark:`, `Successfully deleted ${messagecount} messages!`);
   message.channel.sendEmbed(embed15).then(m => m.delete(5000));
+  
+  const embed = new Discord.RichEmbed()
+    .setColor(0x11B8D6)
+    .setTimestamp()
+    .addField('Action', 'Clear')
+    .addField('Moderator', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Messages deleted', messagecount);
+  if (!modlog) return message.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
+  message.guild.channels.get(modlog.id).sendEmbed(embed);
 };
 
 exports.conf = {
