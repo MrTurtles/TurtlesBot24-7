@@ -10,7 +10,7 @@ module.exports = (oldMessage, newMessage) => {
   let actionlog = newMessage.guild.channels.find('name', 'action-log');
   if(newMessage.author.bot) return;
   if(newMessage.content != oldMessage.content){
-       if (!actionlog) return newMessage.author.sendMessage(`Er is geen #logs channel.\nAls je deze commando wilt loggen moet je deze channel aanmaken:'#logs'`);
+       if (!actionlog) return newMessage.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
        newMessage.guild.channels.get(actionlog.id).sendEmbed(embed);
    }
   //console.log(newMessage.content)
