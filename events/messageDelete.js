@@ -14,7 +14,7 @@ module.exports = messageDelete => {
     .addField('User', `${messageDelete.author.tag} (@<${messageDelete.author.id}>)`)
     .addField('Message', messageDelete.content);
 
-  if (!actionlog) return messageDelete.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
+  if (!actionlog) return messageDelete.author.sendMessage(`There is no #action-log channel.\nIf you want to log important commands you have to make the channel:'#action-log'`);
   messageDelete.guild.channels.get(actionlog.id).sendEmbed(embed);
 
 };
