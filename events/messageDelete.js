@@ -3,7 +3,7 @@ module.exports = messageDelete => {
   let actionlog = messageDelete.guild.channels.find('name', 'action-log');
   if(messageDelete.author.bot) return;
   if(messageDelete.content.startsWith(';')) return;
-
+ 
   //console.log(messageDelete.content)
   //messageDelete.channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted.`)
 
