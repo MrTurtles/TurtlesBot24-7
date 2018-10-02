@@ -4,8 +4,8 @@ module.exports = messageDelete => {
   if(messageDelete.author.bot) return;
   if(messageDelete.content.startsWith(';')) return;
 
-  console.log(messageDelete.content)
-  messageDelete.channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted.`)
+  //console.log(messageDelete.content)
+  //messageDelete.channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted.`)
 
   const embed = new Discord.RichEmbed()
     .setColor(0x11B8D6)
@@ -14,7 +14,7 @@ module.exports = messageDelete => {
     .addField('User', `${messageDelete.author.tag} (@<${messageDelete.author.id}>)`)
     .addField('Message', messageDelete.content);
 
-  if (!actionlog) return messageDelete.author.sendMessage(`Er is geen #logs channel.\nAls je deze commando wilt loggen moet je deze channel aanmaken:'#logs'`);
+  if (!actionlog) return messageDelete.author.sendMessage(`There is no #logs channel.\nIf you want to log important commands you have to make the channel:'#logs'`);
   messageDelete.guild.channels.get(actionlog.id).sendEmbed(embed);
 
 };
