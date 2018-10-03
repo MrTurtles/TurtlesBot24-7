@@ -4,7 +4,7 @@ module.exports = (oldMessage, newMessage) => {
     .setColor(0x11B8D6)
     .setTimestamp()
     .setTitle('Message Edited')
-    .addField('User', `${newMessage.author.tag} (@<${newMessage.author.id}>)`)
+    .addField('User', `${newMessage.author.tag} (<@${newMessage.author.id}>)`)
     .addField('Old Message', `${oldMessage.content}.`)
     .addField('New Message', `${newMessage.content}.`);
   let actionlog = newMessage.guild.channels.find('name', 'action-log');
