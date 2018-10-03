@@ -11,7 +11,7 @@ module.exports = messageDelete => {
     .setColor(0x11B8D6)
     .setTimestamp()
     .setTitle('Message Deleted')
-    .addField('User', `${messageDelete.author.tag} (@<${messageDelete.author.id}>)`)
+    .addField('User', `${messageDelete.author.tag} (<@${messageDelete.author.id}>)`)
     .addField('Message', messageDelete.content);
 
   if (!actionlog) return messageDelete.author.sendMessage(`There is no #action-log channel.\nIf you want to log important commands you have to make the channel:'#action-log'`);
