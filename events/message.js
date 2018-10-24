@@ -4,9 +4,9 @@ const Discord = require('discord.js')
 module.exports = message => {
   let client = message.client;
   let prefix = ",";
-  let staff = client.guilds.get('470359188627783694').roles.find('name', 'Staff');
+  //let staff = client.guilds.get('470359188627783694').roles.find('name', 'Staff');
   let user = message.author;
-  if(!staff) return; 
+  //if(!staff) return; 
   if (message.author.bot) return;
 
   //if (sales.login = `,help | Off Sale!`) {
